@@ -1,8 +1,8 @@
-import React from 'react'
+import { SFC } from 'react'
 import Login from './login'
 import 'src/styles/login/main.css'
 
-const indexLogin: React.SFC = () => {
+const indexLogin: SFC = () => {
     return (
       <div className="rootLogin">
         <Login />

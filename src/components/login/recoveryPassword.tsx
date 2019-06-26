@@ -12,7 +12,7 @@ const RecoveryPassword: React.SFC<Props> = (props: Props) => {
         {recovery && (
         <CSSTransition
           className="recoveryGroup"
-          timeout={9000}
+          timeout={1000}
           classNames="recoveryPassword"
         >
           <div>
