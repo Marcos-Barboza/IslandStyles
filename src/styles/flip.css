@@ -1,0 +1,31 @@
+.cardContainer {
+    transform: rotateY(180deg);
+    background-color: #ffad34;
+}
+
+.flipper-enter {
+    transition: 1s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.cardContainer,
+.front,
+.back {
+    perspective: 900px;
+    width: 45vw;
+    height: 45vh;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffad34;
+    position: absolute;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #f5f2d0;
+}

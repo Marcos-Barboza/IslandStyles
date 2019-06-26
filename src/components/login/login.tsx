@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
-import RecoveryPassword from './recoveryPassword'
+import Flip from 'src/components/ui/flip'
 
 const Login: React.SFC = () => {
-    const [display, setDisplay] = useState(false)
+    const [display, setDisplay] = useState(true)
     return (
-      <div className="login">
-        <RecoveryPassword recovery={display} />
-        <span
-          className="forgotPassword"
-          role="presentation"
-          onClick={() => setDisplay(!display)}
-        >
-                Esqueceu a senha?
-        </span>
-      </div>
+      <Flip activeTransition={display}>
+        <div className="login">
+          <span
+            className="forgotPassword"
+            role="presentation"
+            onClick={() => setDisplay(!display)}
+          >
+                    Esqueceu a senha?
+          </span>
+        </div>
+      </Flip>
     )
 }
 

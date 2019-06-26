@@ -8,7 +8,7 @@ interface Props {
 const RecoveryPassword: React.SFC<Props> = (props: Props) => {
     const { recovery } = props
     return (
-      <TransitionGroup>
+      <TransitionGroup className="end">
         {recovery && (
         <CSSTransition
           className="recoveryGroup"
