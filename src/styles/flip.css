@@ -1,68 +1,24 @@
-.cardContainer .flipper {}
+.flip-enter-active {
+    transform: rotateY(180deg);
+    transition: 1s;
+    transform-style: preserve-3d
+}
+
+.flip-exit-active {
+    transform: rotateY(180deg);
+    transition: 1s;
+    transform-style: preserve-3d
+}
 
 .flipper {
     transition: 1s;
-    transform-style: preserve-3d;
-    backface-visibility: hidden
-}
-
-.cardContainer,
-.front,
-.back {
-    perspective: 900px;
+    transform-style: preserve-3d
 }
 
 .front {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffad34;
-    position: absolute;
+    position: absolute
 }
 
 .back {
-    transform: rotateY(180deg);
-    background-color: #b4a92f;
-}
-
-.fade-enter {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-enter-active {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-done {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-exit {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-exit-active {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-appear {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-}
-
-.fade-appear-active {
-    transition: 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg)
 }

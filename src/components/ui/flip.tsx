@@ -1,23 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import 'src/styles/main.css'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 interface Props {
     activeTransition: boolean
-    front: JSX.Element[] | JSX.Element
-    back: JSX.Element[] | JSX.Element
     largura: string
     altura: string
+    front: JSX.Element[] | JSX.Element
+    back: JSX.Element[] | JSX.Element
 }
 
 const Flip: React.FunctionComponent<Props> = props => {
-    const { activeTransition, front, back, largura, altura } = props
+    const { largura, altura, front, back, activeTransition } = props
     return (
       <CSSTransition
-        classNames="fade"
-        in={!activeTransition}
-        onExiting={node => node.translate.valueOf}
-        timeout={100000}
+        in={activeTransition}
+        addEndListener={node => console.log(node)}
+        exit
+        classNames="flip"
+        timeout={3000}
       >
         <div
           style={{ minWidth: largura, minHeight: altura }}
