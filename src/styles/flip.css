@@ -1,20 +1,15 @@
-.cardContainer {
-    transform: rotateY(180deg);
-    background-color: #ffad34;
-}
+.cardContainer .flipper {}
 
-.flipper-enter {
+.flipper {
     transition: 1s;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    backface-visibility: hidden
 }
 
 .cardContainer,
 .front,
 .back {
     perspective: 900px;
-    width: 45vw;
-    height: 45vh;
 }
 
 .front {
@@ -27,5 +22,47 @@
 
 .back {
     transform: rotateY(180deg);
-    background-color: #f5f2d0;
+    background-color: #b4a92f;
+}
+
+.fade-enter {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-enter-active {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-done {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-exit {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-exit-active {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-appear {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.fade-appear-active {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
 }

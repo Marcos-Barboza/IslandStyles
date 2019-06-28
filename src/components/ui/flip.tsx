@@ -4,21 +4,41 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 interface Props {
     activeTransition: boolean
+    front: JSX.Element[] | JSX.Element
+    back: JSX.Element[] | JSX.Element
+    largura: string
+    altura: string
 }
 
-const Flip: React.SFC<Props> = props => {
-    const { activeTransition } = props
+const Flip: React.FunctionComponent<Props> = props => {
+    const { activeTransition, front, back, largura, altura } = props
     return (
-      <div className="cardContainer">
-        <TransitionGroup>
-          <CSSTransition timeout={1000} classNames="flipper">
-            {props.children}
-          </CSSTransition>
-          <CSSTransition timeout={1000} classNames="flipper">
-            {props.children}
-          </CSSTransition>
-        </TransitionGroup>
-      </div>
+      <CSSTransition
+        classNames="fade"
+        in={!activeTransition}
+        onExiting={node => node.translate.valueOf}
+        timeout={100000}
+      >
+        <div
+          style={{ minWidth: largura, minHeight: altura }}
+          className="cardContainer"
+        >
+          <div className="flipper">
+            <div
+              style={{ minWidth: largura, minHeight: altura }}
+              className="front"
+            >
+              {front}
+            </div>
+            <div
+              style={{ minWidth: largura, minHeight: altura }}
+              className="back"
+            >
+              {back}
+            </div>
+          </div>
+        </div>
+      </CSSTransition>
     )
 }
 
