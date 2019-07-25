@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: 'Artifakt', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.menuBar {
+    z-index: 20;
+    position: sticky;
+    left: 0;
+    height: 3em;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    border-bottom: 1px solid #242424;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}

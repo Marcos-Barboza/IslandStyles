@@ -1,27 +1,19 @@
 import React from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-interface Props {
-    recovery: boolean
-}
-
-const RecoveryPassword: React.SFC<Props> = (props: Props) => {
-    const { recovery } = props
+const RecoveryPassword: React.FunctionComponent = () => {
     return (
-      <TransitionGroup className="end">
-        {recovery && (
-        <CSSTransition
-          className="recoveryGroup"
-          timeout={1000}
-          classNames="recoveryPassword"
+      <div className="login">
+        <div>
+          <input type="email" placeholder="Insira seu email" />
+          <span className="spanBtn">Enviar Email</span>
+        </div>
+        <div
+          role="presentation"
+          onClick={() => setTransition(false)}
         >
-          <div>
-            <input type="email" placeholder="Insira seu email" />
-            <span className="spanBtn">Enviar Email</span>
-          </div>
-        </CSSTransition>
-            )}
-      </TransitionGroup>
+                Voltar
+        </div>
+      </div>
     )
 }
 

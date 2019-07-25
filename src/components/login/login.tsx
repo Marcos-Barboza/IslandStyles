@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import RecoveryPassword from 'src/components/login/recoveryPassword'
 import Flip from 'src/components/ui/flip'
 
 const Login: React.FunctionComponent = () => {
     const [activeTransition, setTransition] = useState(false)
+    const transition = React.createRef()
+
     return (
       <Flip
         activeTransition={activeTransition}
@@ -10,18 +13,15 @@ const Login: React.FunctionComponent = () => {
         altura="400px"
         front={(
           <div className="login">
-            <span onClick={() => setTransition(!activeTransition)}>
+            <div
+              role="presentation"
+              onClick={() => setTransition(!activeTransition)}
+            >
                         recuperar senha
-            </span>
+            </div>
           </div>
 )}
-        back={(
-          <div className="login">
-            <span onClick={() => setTransition(!activeTransition)}>
-                        voltar
-            </span>
-          </div>
-)}
+        back={<RecoveryPassword />}
       />
     )
 }

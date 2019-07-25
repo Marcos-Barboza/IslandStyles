@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import React from 'react'
-import Login from 'src/components/login'
+import Home from 'src/components/home'
 
 const Root = () => (
   <Router>
-    <Route path="/" component={Login} />
+    <Route path="/" component={Home} />
   </Router>
 )
 

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -21,6 +22,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|svg|jpg|gif|jpeg)$/,
+                use: ['file-loader'],
+            },
+            {
                 test: /\.(js|ts)x?$/,
                 exclude: /node_modules/,
                 include: [path.resolve(__dirname, 'src')],
@@ -30,15 +35,14 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: ['source-map-loader'],
                 enforce: 'pre',
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ],
     },

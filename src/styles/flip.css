@@ -15,6 +15,10 @@
     transform-style: preserve-3d
 }
 
+.flipper .front .back {
+    backface-visibility: hidden
+}
+
 .front {
     position: absolute
 }

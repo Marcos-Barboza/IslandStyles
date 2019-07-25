@@ -15,10 +15,9 @@ const Flip: React.FunctionComponent<Props> = props => {
     return (
       <CSSTransition
         in={activeTransition}
-        addEndListener={node => console.log(node)}
         exit
         classNames="flip"
-        timeout={3000}
+        timeout={30000}
       >
         <div
           style={{ minWidth: largura, minHeight: altura }}
