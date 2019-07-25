@@ -1,22 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Fusion from 'src/assets/fusion.png'
 
 const Intro: React.FunctionComponent = () => {
-    const [trocaPosition, setTrocaPosition] = useState(false)
+    const [trocaPosition, setTrocaPosition] = useState(0)
 
     useEffect(() => {
-        if (trocaPosition) {
+        if (trocaPosition === 1) {
             window.scrollTo({
-                top: 1300,
+                top: 800,
+            })
+        }
+        if (trocaPosition === 2) {
+            window.scrollTo({
+                top: -1300,
             })
         }
     }, [trocaPosition])
 
     const trocaPositionScrollY = (window: Window) => {
-        return window.addEventListener('scroll', () => {
+        return window.addEventListener('scroll', event => {
             const scroll = window.scrollY
-            if (scroll > 0 && scroll < 500) {
-                setTrocaPosition(true)
+            if (scroll > 0 && scroll < 10) {
+                setTrocaPosition(1)
             }
         })
     }
