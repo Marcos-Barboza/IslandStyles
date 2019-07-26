@@ -5,6 +5,7 @@
 }
 
 .details {
+    margin-top: 5%;
     display: flex;
     width: 72%;
     height: 90vh;
@@ -47,4 +48,81 @@
 
 .subTitleDetails {
     color: rgb(124, 124, 124)
+}
+
+.modelingB {
+    opacity: 1;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35em;
+    height: 37em;
+    right: 22%;
+    top: 80%;
+    background-image: url(../../../assets/roda.png);
+    background-size: cover;
+
+}
+
+.modelingF {
+    transition: 2s;
+    opacity: 0;
+    position: absolute;
+    width: 45em;
+    height: 37em;
+    right: 17%;
+    top: 132%;
+    background-image: url(../../../assets/roda.png);
+    background-size: cover;
+}
+
+
+.designB {
+    opacity: 1;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35em;
+    height: 37em;
+    right: 22%;
+    top: 80%;
+    background-image: url(../../../assets/design.png);
+    background-size: cover;
+}
+
+.designF {
+    transition: 2s;
+    opacity: 0;
+    position: absolute;
+    width: 35em;
+    height: 37em;
+    right: 26%;
+    top: 132%;
+    background-image: url(../../../assets/design.png);
+    background-size: cover;
+}
+
+.collaborationB {
+    opacity: 1;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35em;
+    height: 37em;
+    right: 22%;
+    top: 80%;
+    background-image: url(../../../assets/collaboration.png);
+    background-size: cover;
+}
+
+.collaborationF {
+    transition: 2s;
+    opacity: 0;
+    position: absolute;
+    width: 35em;
+    height: 37em;
+    right: 25%;
+    top: 132%;
+    background-image: url(../../../assets/collaboration.png);
+    background-size: cover;
 }

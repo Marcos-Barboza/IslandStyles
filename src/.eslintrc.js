@@ -43,6 +43,9 @@ module.exports = {
         },
         'import/resolver': {
             typescript: {},
+            node: {
+                paths: ['src'],
+            },
         },
     },
 }

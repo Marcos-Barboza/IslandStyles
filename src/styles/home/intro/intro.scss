@@ -65,9 +65,20 @@
 }
 
 .imgContainerDesign {
+    opacity: 1;
     border: 1px solid white;
     position: absolute;
     top: 15%;
+    right: 40%;
+    width: 141px;
+}
+
+.imgContainerDesignAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 90%;
     right: 40%;
     width: 141px;
 }
@@ -80,12 +91,32 @@
     top: 29%;
 }
 
+.imgContainerSimulationAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 145%;
+    right: 33%;
+    width: 141px;
+}
+
 .imgContainerModeling {
     border: 1px solid white;
     position: absolute;
     width: 141px;
     right: 20%;
     top: 10%;
+}
+
+.imgContainerModelingAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 100%;
+    right: 25%;
+    width: 141px;
 }
 
 .imgContainerRapid {
@@ -96,12 +127,32 @@
     top: 29%;
 }
 
+.imgContainerRapidAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 150%;
+    right: 25%;
+    width: 141px;
+}
+
 .imgContainerCollaboration {
     border: 1px solid white;
     position: absolute;
     width: 142px;
     right: 22%;
     top: 43%;
+}
+
+.imgContainerCollaborationAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 80%;
+    right: 23%;
+    width: 141px;
 }
 
 .imgContainerGenerative {
@@ -112,6 +163,16 @@
     right: 32%;
 }
 
+.imgContainerGenerativeAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 145%;
+    right: 33%;
+    width: 141px;
+}
+
 .imgContainerManufacturing {
     border: 1px solid white;
     position: absolute;
@@ -120,13 +181,32 @@
     right: 12%;
 }
 
+.imgContainerManufacturingAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 145%;
+    right: 33%;
+    width: 141px;
+}
+
 .imgContainerDocumentation {
     border: 1px solid white;
     position: absolute;
     width: 141px;
     right: 43%;
     top: 50%;
+}
 
+.imgContainerDocumentationAfter {
+    transition: 3s;
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 145%;
+    right: 33%;
+    width: 141px;
 }
 
 .imgTitle {

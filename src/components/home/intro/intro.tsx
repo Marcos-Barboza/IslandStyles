@@ -1,24 +1,89 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import Fusion from 'src/assets/fusion.png'
 
 const Intro: React.FunctionComponent = () => {
     const [trocaPosition, setTrocaPosition] = useState(0)
-
+    interface TrocaStyle {
+        i: number
+        title: string
+        before: string
+        after: string
+        item: string
+    }
+    const trocaStyle: TrocaStyle[] = [
+        {
+            i: 1,
+            title: 'DESIGN',
+            before: 'imgContainerDesign',
+            after: 'imgContainerDesignAfter',
+            item: 'design',
+        },
+        {
+            i: 2,
+            title: 'SIMULATION',
+            before: 'imgContainerSimulation',
+            after: 'imgContainerSimulationAfter',
+            item: 'simulation',
+        },
+        {
+            i: 3,
+            title: '3D MODELING',
+            before: 'imgContainerModeling',
+            after: 'imgContainerModelingAfter',
+            item: 'modeling',
+        },
+        {
+            i: 4,
+            title: 'RAPID PROTOTYPING',
+            before: 'imgContainerRapid',
+            after: 'imgContainerRapidAfter',
+            item: 'rapid',
+        },
+        {
+            i: 5,
+            title: 'COLLABORATION',
+            before: 'imgContainerCollaboration',
+            after: 'imgContainerCollaborationAfter',
+            item: 'collaboration',
+        },
+        {
+            i: 6,
+            title: 'GENERATIVE',
+            before: 'imgContainerGenerative',
+            after: 'imgContainerGenerativeAfter',
+            item: 'generative',
+        },
+        {
+            i: 7,
+            title: 'MANUFACTURING',
+            before: 'imgContainerManufacturing',
+            after: 'imgContainerManufacturingAfter',
+            item: 'manufacturing',
+        },
+        {
+            i: 8,
+            title: 'DOCUMENTATION',
+            before: 'imgContainerDocumentation',
+            after: 'imgContainerDocumentationAfter',
+            item: 'documentation',
+        },
+    ]
     useEffect(() => {
         if (trocaPosition === 1) {
-            window.scrollTo({
-                top: 800,
-            })
-        }
-        if (trocaPosition === 2) {
-            window.scrollTo({
-                top: -1300,
-            })
+            const intervalo = setInterval(() => {
+                window.scrollTo({
+                    top: 100 + window.scrollY,
+                    behavior: 'smooth',
+                })
+            }, 100)
+            setTimeout(() => {
+                clearInterval(intervalo)
+            }, 2000)
         }
     }, [trocaPosition])
 
     const trocaPositionScrollY = (window: Window) => {
-        return window.addEventListener('scroll', event => {
+        return window.addEventListener('scroll', () => {
             const scroll = window.scrollY
             if (scroll > 0 && scroll < 10) {
                 setTrocaPosition(1)
@@ -59,38 +124,15 @@ const Intro: React.FunctionComponent = () => {
             <div className="subTitle">Have Autodesk contact you</div>
           </div>
           <div className="introRight">
-            <div className="imgContainerDesign">
-              <div className="design" />
-              <div className="imgTitle">DESIGN</div>
-            </div>
-            <div className="imgContainerSimulation">
-              <div className="simulation" />
-              <div className="imgTitle">SIMULATION</div>
-            </div>
-            <div className="imgContainerModeling">
-              <div className="modeling" />
-              <div className="imgTitle">3D MODELING</div>
-            </div>
-            <div className="imgContainerRapid">
-              <div className="rapid" />
-              <div className="imgTitle">RAPID PROTOTYPING</div>
-            </div>
-            <div className="imgContainerCollaboration">
-              <div className="collaboration" />
-              <div className="imgTitle">COLLABORATION</div>
-            </div>
-            <div className="imgContainerGenerative">
-              <div className="generative" />
-              <div className="imgTitle">GENERATIVE</div>
-            </div>
-            <div className="imgContainerManufacturing">
-              <div className="manufacturing" />
-              <div className="imgTitle">MANUFACTURING</div>
-            </div>
-            <div className="imgContainerDocumentation">
-              <div className="documentation" />
-              <div className="imgTitle">DOCUMENTATION</div>
-            </div>
+            {trocaStyle.map((v) => (
+              <div
+                key={v.i}
+                className={trocaPosition ? v.after : v.before}
+              >
+                <div className={v.item} />
+                <div className="imgTitle">{v.title}</div>
+              </div>
+                    ))}
           </div>
         </div>
       </div>
