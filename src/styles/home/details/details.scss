@@ -51,39 +51,38 @@
 }
 
 .modelingB {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    width: 35em;
-    height: 37em;
-    right: 22%;
+    width: 550px;
+    height: 300px;
+    right: 60%;
     top: 80%;
     background-image: url(../../../assets/roda.png);
     background-size: cover;
-
 }
 
 .modelingF {
-    transition: 2s;
-    opacity: 0;
+    transition: 4s;
+    opacity: 1;
     position: absolute;
-    width: 45em;
-    height: 37em;
-    right: 17%;
-    top: 132%;
+    width: 500px;
+    height: 310px;
+    right: 15%;
+    top: 159%;
     background-image: url(../../../assets/roda.png);
     background-size: cover;
 }
 
 
 .designB {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    width: 35em;
-    height: 37em;
+    width: 600px;
+    height: 300px;
     right: 22%;
     top: 80%;
     background-image: url(../../../assets/design.png);
@@ -91,24 +90,24 @@
 }
 
 .designF {
-    transition: 2s;
-    opacity: 0;
+    opacity: 1;
+    transition: 4s;
     position: absolute;
-    width: 35em;
-    height: 37em;
-    right: 26%;
-    top: 132%;
+    width: 600px;
+    height: 300px;
+    right: 11%;
+    top: 155%;
     background-image: url(../../../assets/design.png);
     background-size: cover;
 }
 
 .collaborationB {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    width: 35em;
-    height: 37em;
+    width: 400px;
+    height: 300px;
     right: 22%;
     top: 80%;
     background-image: url(../../../assets/collaboration.png);
@@ -116,13 +115,13 @@
 }
 
 .collaborationF {
-    transition: 2s;
-    opacity: 0;
+    transition: 4s;
+    opacity: 1;
     position: absolute;
-    width: 35em;
-    height: 37em;
-    right: 25%;
-    top: 132%;
+    width: 400px;
+    height: 300px;
+    right: 18%;
+    top: 159%;
     background-image: url(../../../assets/collaboration.png);
     background-size: cover;
 }

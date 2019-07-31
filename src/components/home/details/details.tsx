@@ -20,13 +20,14 @@ const Details: React.FunctionComponent = () => {
     const trocaPositionScrollY = (window: Window) => {
         return window.addEventListener('scroll', () => {
             const scroll = window.scrollY
-            if (scroll > 700 && scroll < 998) {
+            if (scroll > 300 && scroll < 970) {
                 setTrocaPosition(1)
             }
-            if (scroll === 1041) {
+            console.log(scroll)
+            if (scroll === 905 || scroll > 500) {
                 setTimeout(() => {
                     setTrocaPosition(2)
-                }, 1400)
+                }, 3600)
             }
         })
     }

@@ -72,10 +72,14 @@ const Intro: React.FunctionComponent = () => {
         if (trocaPosition === 1) {
             const intervalo = setInterval(() => {
                 window.scrollTo({
-                    top: 100 + window.scrollY,
+                    top: 115 + window.scrollY,
                     behavior: 'smooth',
                 })
-            }, 100)
+            }, 115)
+            // window.scrollTo({
+            //     top: 905,
+            //     behavior: 'smooth',
+            // })
             setTimeout(() => {
                 clearInterval(intervalo)
             }, 2000)
@@ -124,7 +128,7 @@ const Intro: React.FunctionComponent = () => {
             <div className="subTitle">Have Autodesk contact you</div>
           </div>
           <div className="introRight">
-            {trocaStyle.map((v) => (
+            {trocaStyle.map(v => (
               <div
                 key={v.i}
                 className={trocaPosition ? v.after : v.before}
