@@ -73,10 +73,14 @@ const Intro: React.FunctionComponent = () => {
         if (trocaPosition) {
             const intervalo = setInterval(() => {
                 window.scrollTo({
-                    top: 100 + window.scrollY,
+                    top: 115 + window.scrollY,
                     behavior: 'smooth',
                 })
-            }, 100)
+            }, 115)
+            // window.scrollTo({
+            //     top: 905,
+            //     behavior: 'smooth',
+            // })
             setTimeout(() => {
                 window.removeEventListener('scroll', eventListener, false)
                 clearInterval(intervalo)
