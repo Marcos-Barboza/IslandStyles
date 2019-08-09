@@ -1,294 +1,120 @@
-.introContainer {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url(../../../assets/fusionBanner.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: auto;
-    background-color: #0d0d0d;
-    position: relative;
-    background-position: center;
-}
+@import '../../defaultStructs.scss';
 
-.intro {
-    display: flex;
-    width: 72%;
-    height: 100vh;
-}
-
-.introRight {
-    display: grid;
-    align-content: center;
-    width: 58.3333%;
-}
-
-.introLeft {
-    margin-top: 10%;
-    width: 41.66667%;
-    padding-left: 0;
-    padding-right: 0;
-}
+$widthCard: 141px;
+$fontColor: #fff;
+$bordaDefault: 1px solid white;
 
 .title {
+    color: $fontColor;
     margin-bottom: 15px;
     font-size: 30px;
-    color: white;
 }
 
 .subTitle {
-    color: white;
+    color: $fontColor;
     margin-top: 10px;
-}
-
-.button1 {
-    cursor: pointer;
-    margin-left: 0px;
-    font-weight: bold;
-    line-height: 1.4;
-    color: white;
-    background-color: #faa21b;
-
-    padding: .565em 1em .5em 1em;
-
-}
-
-.button2 {
-    cursor: pointer;
-    margin-left: 10px;
-    font-weight: bold;
-    line-height: 1.4;
-    color: white;
-    border: 1px solid white;
-    width: 14em;
-    padding: .565em 1em .5em 1em;
-}
-
-.imgContainerDesign {
-    opacity: 1;
-    border: 1px solid white;
-    position: absolute;
-    top: 15%;
-    right: 40%;
-    width: 141px;
-}
-
-.imgContainerDesignAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 90%;
-    right: 40%;
-    width: 141px;
-}
-
-.imgContainerSimulation {
-    border: 1px solid white;
-    position: absolute;
-    right: 32%;
-    width: 141px;
-    top: 29%;
-}
-
-.imgContainerSimulationAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 145%;
-    right: 33%;
-    width: 141px;
-}
-
-.imgContainerModeling {
-    border: 1px solid white;
-    position: absolute;
-    width: 141px;
-    right: 20%;
-    top: 10%;
-}
-
-.imgContainerModelingAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 100%;
-    right: 25%;
-    width: 141px;
-}
-
-.imgContainerRapid {
-    border: 1px solid white;
-    position: absolute;
-    width: 141px;
-    right: 11%;
-    top: 29%;
-}
-
-.imgContainerRapidAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 150%;
-    right: 25%;
-    width: 141px;
-}
-
-.imgContainerCollaboration {
-    border: 1px solid white;
-    position: absolute;
-    width: 142px;
-    right: 22%;
-    top: 43%;
-}
-
-.imgContainerCollaborationAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 80%;
-    right: 23%;
-    width: 141px;
-}
-
-.imgContainerGenerative {
-    border: 1px solid white;
-    position: absolute;
-    width: 141px;
-    top: 60%;
-    right: 32%;
-}
-
-.imgContainerGenerativeAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 145%;
-    right: 33%;
-    width: 141px;
-}
-
-.imgContainerManufacturing {
-    border: 1px solid white;
-    position: absolute;
-    width: 141px;
-    top: 60%;
-    right: 12%;
-}
-
-.imgContainerManufacturingAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 145%;
-    right: 33%;
-    width: 141px;
-}
-
-.imgContainerDocumentation {
-    border: 1px solid white;
-    position: absolute;
-    width: 141px;
-    right: 43%;
-    top: 50%;
-}
-
-.imgContainerDocumentationAfter {
-    transition: 3s;
-    opacity: 0;
-    border: 1px solid white;
-    position: absolute;
-    top: 145%;
-    right: 33%;
-    width: 141px;
-}
+};
 
 .imgTitle {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @extend %img;
+    color: $fontColor;
+    text-align: center;
     padding: 11px 12px;
-    color: #fff;
     text-transform: uppercase;
     font-size: 12px;
     line-height: 16px;
-    background-image: url(../../../assets/fusionBanner.jpeg)
-}
+    background-image: url(../../assets/fusionBanner.jpeg)
+};
 
-.design {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/design.jpeg)
-}
+/** Aplica Background e centraliza a intro */
+.introContainer {
+    @extend %xCenter, %img;
+    min-height: 100vh;
+    position: relative;
+    background-image: url(../../assets/fusionBanner.jpeg);
+};
 
-.simulation {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/simulation.jpeg)
-}
+.intro {
+    width: 72%;
+};
 
-.modeling {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/roda.jpeg)
-}
+.introLeft {
+    margin-top: 10%;
+    width: 41.67%;
+};
 
-.rapid {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/rapid.jpeg)
-}
+.subscribeButton {
+    @extend %button;
+    background-color: #faa21b;
+};
 
-.collaboration {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/collaboration.jpeg)
-}
+.downloadButton {
+    @extend %button;
+    border: $bordaDefault;
+    margin-left: 10px;
+    width: 14em;
+};
 
-.generative {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/generative.jpeg)
-}
+$imgContainer: (
+    ("Design", 15%, 40%),
+    ("Simulation", 29%, 32%),
+    ("Modeling", 10%, 20%),
+    ("Rapid", 29%, 11%),
+    ("Collaboration", 43%, 22%),
+    ("Generative", 60%, 32%),
+    ("Manufacturing", 60%, 12%),
+    ("Documentation", 50%, 43%)
+);
 
-.manufacturing {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/manufacturning.jpeg)
-}
+@each $name, $top, $right in $imgContainer {
+    .imgContainer#{$name} {
+        border: $bordaDefault;
+        top: $top;
+        right: $right;
+        width: $widthCard;
+        position: absolute;
+    };
+};
 
-.documentation {
-    width: 141px;
-    height: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../assets/documentation.jpeg)
-}
+$imgItem: (
+    ("design", 'design.jpeg'),
+    ("simulation", 'simulation.jpeg'),
+    ("modeling", 'roda.jpeg'),
+    ("rapid", 'rapid.jpeg'),
+    ("collaboration", 'collaboration.jpeg'),
+    ("generative", 'generative.jpeg'),
+    ("manufacturing", 'manufacturning.jpeg'),
+    ("documentation", 'documentation.jpeg'),
+);
+
+@each $name, $img in $imgItem {
+    .#{$name} {
+        @extend %img;
+        background-image: url("../../assets/#{$img}");
+        height: 100px;
+    };
+};
+
+/** Estilo aplicado logo após o movimento do scroll */
+$afterImgContainer: (
+    ("Design", 90%, 40%),
+    ("Simulation", 145%, 33%),
+    ("Modeling", 90%, 25%),
+    ("Rapid", 150%, 25%),
+    ("Collaboration", 80%, 23%),
+    ("Generative", 145%, 33%),
+    ("Manufacturing", 145%, 33%),
+    ("Documentation", 145%, 33%)
+);
+
+@each $name, $top, $right in $afterImgContainer {
+    .imgContainer#{$name}After {
+        border: $bordaDefault;
+        top: $top;
+        right: $right;
+        width: $widthCard;
+        transition: 3s;
+        opacity: 0;
+        position: absolute;
+    };
+};

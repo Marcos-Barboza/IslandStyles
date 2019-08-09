@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Fusion from 'src/assets/fusion.png'
 
 const Intro: React.FunctionComponent = () => {
-    const [trocaPosition, setTrocaPosition] = useState(0)
+    const [trocaPosition, setTrocaPosition] = useState(false)
     interface TrocaStyle {
         i: number
         title: string
@@ -68,8 +68,9 @@ const Intro: React.FunctionComponent = () => {
             item: 'documentation',
         },
     ]
+
     useEffect(() => {
-        if (trocaPosition === 1) {
+        if (trocaPosition) {
             const intervalo = setInterval(() => {
                 window.scrollTo({
                     top: 100 + window.scrollY,
@@ -77,18 +78,22 @@ const Intro: React.FunctionComponent = () => {
                 })
             }, 100)
             setTimeout(() => {
+                window.removeEventListener('scroll', eventListener, false)
                 clearInterval(intervalo)
             }, 2000)
         }
     }, [trocaPosition])
 
-    const trocaPositionScrollY = (window: Window) => {
-        return window.addEventListener('scroll', () => {
-            const scroll = window.scrollY
-            if (scroll > 0 && scroll < 10) {
-                setTrocaPosition(1)
-            }
-        })
+    const eventListener = () => {
+       const scroll = window.scrollY
+       console.log(scroll)
+        if (scroll > 0 && scroll < 10) {
+            setTrocaPosition(true)
+        }
+    }
+
+    const trocaPositionScrollY = (window: Window) => {  
+        return window.addEventListener('scroll', eventListener, false)
     }
 
     trocaPositionScrollY(window)
@@ -115,15 +120,15 @@ const Intro: React.FunctionComponent = () => {
                         single platform.
             </p>
             <div style={{ display: 'flex' }}>
-              <div className="button1">SUBSCRIBE</div>
-              <div className="button2">DOWNLOAD FREE TRIAL</div>
+              <div className="subscribeButton">SUBSCRIBE</div>
+              <div className="downloadButton">DOWNLOAD FREE TRIAL</div>
             </div>
             <div style={{ marginTop: '10px' }} className="subTitle">
                         Talk to a sales representative: 1-833-843-3437
             </div>
             <div className="subTitle">Have Autodesk contact you</div>
           </div>
-          <div className="introRight">
+          <div>
             {trocaStyle.map((v) => (
               <div
                 key={v.i}

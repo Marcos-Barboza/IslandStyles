@@ -4,16 +4,16 @@ const Details: React.FunctionComponent = () => {
     const [trocaPosition, setTrocaPosition] = useState(0)
     const imagens = [
         {
-            before: 'modelingB',
-            after: 'modelingF',
+            before: 'modelingBefore',
+            after: 'modelingAfter',
         },
         {
-            before: 'designB',
-            after: 'designF',
+            before: 'designBefore',
+            after: 'designAfter',
         },
         {
-            before: 'collaborationB',
-            after: 'collaborationF',
+            before: 'collaborationBefore',
+            after: 'collaborationAfter',
         },
     ]
 
@@ -51,10 +51,10 @@ const Details: React.FunctionComponent = () => {
                 className={trocaPosition ? v.after : v.before}
               />
                     ))}
-            <div className="computador">
+            <div className="computer">
               <div
                 style={{ opacity: trocaPosition === 2 ? 1 : 0.2 }}
-                className="moto"
+                className="motorcycle"
               />
             </div>
           </div>

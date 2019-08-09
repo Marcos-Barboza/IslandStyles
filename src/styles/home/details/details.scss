@@ -1,18 +1,19 @@
+@import '../../defaultStructs.scss';
+
+$backgroundSize: contain !important;
+
 .detailsContainer {
+    @extend %xCenter;
     height: 90vh;
-    display: flex;
-    justify-content: center;
 }
 
 .details {
     margin-top: 5%;
     display: flex;
     width: 72%;
-    height: 90vh;
 }
 
 .detailsRight {
-    display: grid;
     width: 57%;
 }
 
@@ -20,25 +21,21 @@
     margin-top: 20%;
     margin-right: 8%;
     width: 35%;
-    padding-left: 0;
-    padding-right: 0;
 }
 
-.moto {
+.motorcycle {
+    @extend %img;
     width: 100%;
     height: 50em;
-    background-image: url(../../../assets/moto.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-image: url(../../assets/moto.png);
+    background-size: $backgroundSize;
 }
 
-.computador {
-    background-image: url(../../../assets/pc.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
+.computer {
+    @extend %img;
+    background-image: url(../../assets/pc.png);
+    background-size: $backgroundSize;
+};
 
 .titleDetails {
     margin-bottom: 15px;
@@ -50,79 +47,35 @@
     color: rgb(124, 124, 124)
 }
 
-.modelingB {
-    opacity: 1;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 35em;
-    height: 37em;
-    right: 22%;
-    top: 80%;
-    background-image: url(../../../assets/roda.png);
-    background-size: cover;
+$detailsImgs: (
+    ("modeling", "roda.png"),
+    ("design", "design.png"),
+    ("collaboration" "collaboration.png"),
+);
 
-}
+@each $name, $img in $detailsImgs {
+    .#{$name}Before {
+        @extend %img;
+        opacity: 0;
+        position: absolute;
+        width: 35em;
+        height: 37em;
+        right: 22%;
+        top: 80%;
+        background-image: url("../../assets/#{$img}");
+    };
+};
 
-.modelingF {
-    transition: 2s;
-    opacity: 0;
-    position: absolute;
-    width: 45em;
-    height: 37em;
-    right: 17%;
-    top: 132%;
-    background-image: url(../../../assets/roda.png);
-    background-size: cover;
-}
-
-
-.designB {
-    opacity: 1;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 35em;
-    height: 37em;
-    right: 22%;
-    top: 80%;
-    background-image: url(../../../assets/design.png);
-    background-size: cover;
-}
-
-.designF {
-    transition: 2s;
-    opacity: 0;
-    position: absolute;
-    width: 35em;
-    height: 37em;
-    right: 26%;
-    top: 132%;
-    background-image: url(../../../assets/design.png);
-    background-size: cover;
-}
-
-.collaborationB {
-    opacity: 1;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 35em;
-    height: 37em;
-    right: 22%;
-    top: 80%;
-    background-image: url(../../../assets/collaboration.png);
-    background-size: cover;
-}
-
-.collaborationF {
-    transition: 2s;
-    opacity: 0;
-    position: absolute;
-    width: 35em;
-    height: 37em;
-    right: 25%;
-    top: 132%;
-    background-image: url(../../../assets/collaboration.png);
-    background-size: cover;
+@each $name, $img in $detailsImgs {
+    .#{$name}After {
+        @extend %img;
+        transition: 2s;
+        opacity: 1;
+        position: absolute;
+        width: 45em;
+        height: 37em;
+        right: 17%;
+        top: 132%;
+        background-image: url("../../assets/#{$img}");
+    }
 }
