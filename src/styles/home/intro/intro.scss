@@ -69,6 +69,7 @@ $imgContainer: (
 
 @each $name, $top, $right in $imgContainer {
     .imgContainer#{$name} {
+        transition: 1s;
         border: $bordaDefault;
         top: $top;
         right: $right;
@@ -114,7 +115,7 @@ $afterImgContainer: (
         top: $top;
         right: $right;
         width: $widthCard;
-        transition: 3s;
+        transition: 1s;
         opacity: 0;
         position: absolute;
     }

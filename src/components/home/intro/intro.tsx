@@ -3,6 +3,7 @@ import Fusion from 'src/assets/fusion.png'
 
 const Intro: React.FunctionComponent = () => {
     const [trocaPosition, setTrocaPosition] = useState(false)
+    const [begin, setBegin] = useState(false)
     interface TrocaStyle {
         i: number
         title: string
@@ -10,6 +11,7 @@ const Intro: React.FunctionComponent = () => {
         after: string
         item: string
     }
+
     const trocaStyle: TrocaStyle[] = [
         {
             i: 1,
@@ -69,84 +71,75 @@ const Intro: React.FunctionComponent = () => {
         },
     ]
 
-    useEffect(() => {
-        if (trocaPosition) {
-            const intervalo = setInterval(() => {
-                window.scrollTo({
-                    top: 110 + window.scrollY,
-                    behavior: 'smooth',
-                })
-            }, 110)
-            // window.scrollTo({
-            //     top: 905,
-            //     behavior: 'smooth',
-            // })
-            setTimeout(() => {
-                window.removeEventListener('scroll', eventListener, false)
-                clearInterval(intervalo)
-            }, 2000)
-        }
-    }, [trocaPosition])
-
-    const eventListener = () => {
-        const scroll = window.scrollY
-        console.log(scroll)
-        if (scroll > 0 && scroll < 10) {
+    const handleWindowElement = () => {
+        if (window.scrollY > 0 && window.scrollY < 100) {
             setTrocaPosition(true)
+            window.scrollTo({ top: 850 })
+            window.removeEventListener('scroll', handleWindowElement, false)
+        } else if (window.scrollY < 850) {
+            setTrocaPosition(false)
+            window.scrollTo({ top: -850 })
+            window.removeEventListener('scroll', handleWindowElement, false)
         }
     }
 
-    const trocaPositionScrollY = (window: Window) => {
-        return window.addEventListener('scroll', eventListener, false)
+    const handleMoveWindowElement = () => {
+        if (window.scrollY === 0 || window.scrollY === 850) {
+            window.addEventListener('scroll', handleWindowElement, false)
+        } else if (!begin) {
+            setBegin(true)
+            window.addEventListener('scroll', handleWindowElement, false)
+            window.removeEventListener('scroll', handleMoveWindowElement, false)
+        }
     }
 
-    trocaPositionScrollY(window)
+    window.addEventListener('scroll', handleMoveWindowElement, false)
 
     return (
-      <div className="introContainer">
-        <div className="intro">
-          <div className="introLeft">
-            <img
-              style={{ marginBottom: '5px' }}
-              width="587px"
-              alt=""
-              src={Fusion}
-            />
-            <div className="title">
+        <div className="introContainer">
+            <div className="intro">
+                <div className="introLeft">
+                    <img
+                        style={{ marginBottom: '5px' }}
+                        width="587px"
+                        alt=""
+                        src={Fusion}
+                    />
+                    <div className="title">
                         Integrated CAD, CAM, and CAE software.
-            </div>
-            <p
-              style={{ marginTop: '5px', paddingBottom: '5px' }}
-              className="subTitle"
-            >
+                    </div>
+                    <p
+                        style={{ marginTop: '5px', paddingBottom: '5px' }}
+                        className="subTitle"
+                    >
                         Eliminate your disconnected product development process.
                         Unify design, engineering, and manufacturing into a
                         single platform.
-            </p>
-            <div style={{ display: 'flex' }}>
-              <div className="subscribeButton">SUBSCRIBE</div>
-              <div className="downloadButton">
+                    </p>
+                    <div style={{ display: 'flex' }}>
+                        <div className="subscribeButton">SUBSCRIBE</div>
+                        <div className="downloadButton">
                             DOWNLOAD FREE TRIAL
-              </div>
-            </div>
-            <div style={{ marginTop: '10px' }} className="subTitle">
+                        </div>
+                    </div>
+                    <div style={{ marginTop: '10px' }} className="subTitle">
                         Talk to a sales representative: 1-833-843-3437
-            </div>
-            <div className="subTitle">Have Autodesk contact you</div>
-          </div>
-          <div>
-            {trocaStyle.map(v => (
-              <div
-                key={v.i}
-                className={trocaPosition ? v.after : v.before}
-              >
-                <div className={v.item} />
-                <div className="imgTitle">{v.title}</div>
-              </div>
+                    </div>
+                    <div className="subTitle">Have Autodesk contact you</div>
+                </div>
+                <div>
+                    {trocaStyle.map(v => (
+                        <div
+                            key={v.i}
+                            className={trocaPosition ? v.after : v.before}
+                        >
+                            <div className={v.item} />
+                            <div className="imgTitle">{v.title}</div>
+                        </div>
                     ))}
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     )
 }
 
