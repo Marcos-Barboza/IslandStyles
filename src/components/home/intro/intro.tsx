@@ -69,24 +69,24 @@ const Intro: React.FunctionComponent = () => {
         },
     ]
 
-    const windowElement = () => {
+    const handleWindowElement = () => {
         if (window.scrollY > 0 && window.scrollY < 50) {
             setTrocaPosition(true)
             window.scrollTo({ top: 850 })
-            window.removeEventListener('scroll', windowElement, false)
+            window.removeEventListener('scroll', handleWindowElement, false)
         } else if (window.scrollY < 850) {
             setTrocaPosition(false)
             window.scrollTo({ top: -850 })
-            window.removeEventListener('scroll', windowElement, false)
+            window.removeEventListener('scroll', handleWindowElement, false)
         }
     }
 
-    const moveWindowElemet = () => {
+    const handleMoveWindowElement = () => {
         if (window.scrollY === 0 || window.scrollY === 850)
-            window.addEventListener('scroll', windowElement, false)
+            window.addEventListener('scroll', handleWindowElement, false)
     }
 
-    window.addEventListener('scroll', moveWindowElemet)
+    window.addEventListener('scroll', handleMoveWindowElement)
 
     return (
         <div className="introContainer">
