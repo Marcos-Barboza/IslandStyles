@@ -22,12 +22,11 @@ const Details: React.FunctionComponent = () => {
             const scroll = window.scrollY
             if (scroll > 300 && scroll < 970) {
                 setTrocaPosition(1)
-            }
-            console.log(scroll)
+              }
             if (scroll === 905 || scroll > 500) {
                 setTimeout(() => {
                     setTrocaPosition(2)
-                }, 3600)
+                }, 1900)
             }
         })
     }

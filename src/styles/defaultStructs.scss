@@ -4,13 +4,13 @@
     line-height: 1.4;
     padding: .565em 1em .5em 1em;
     font-weight: bold;
-};
+}
 
 %img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-};
+}
 
 %xCenter {
     display: flex;
@@ -23,5 +23,6 @@
 }
 
 %xYCenter {
-    @extend %xCenter, %yCenter;
+    @extend %xCenter,
+    %yCenter;
 }

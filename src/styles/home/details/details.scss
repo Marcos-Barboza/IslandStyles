@@ -35,22 +35,22 @@ $backgroundSize: contain !important;
     @extend %img;
     background-image: url(../../assets/pc.png);
     background-size: $backgroundSize;
-};
+}
 
 .titleDetails {
     margin-bottom: 15px;
     font-size: 30px;
-    color: black
+    color: black;
 }
 
 .subTitleDetails {
-    color: rgb(124, 124, 124)
+    color: rgb(124, 124, 124);
 }
 
 $detailsImgs: (
-    ("modeling", "roda.png"),
-    ("design", "design.png"),
-    ("collaboration" "collaboration.png"),
+    ('modeling', 'roda.png'),
+    ('design', 'design.png'),
+    ('collaboration' 'collaboration.png')
 );
 
 @each $name, $img in $detailsImgs {
@@ -62,9 +62,9 @@ $detailsImgs: (
         height: 37em;
         right: 22%;
         top: 80%;
-        background-image: url("../../assets/#{$img}");
-    };
-};
+        background-image: url('../../assets/#{$img}');
+    }
+}
 
 @each $name, $img in $detailsImgs {
     .#{$name}After {
@@ -72,10 +72,10 @@ $detailsImgs: (
         transition: 2s;
         opacity: 1;
         position: absolute;
-        width: 45em;
-        height: 37em;
+        width: 500px;
+        height: 30em;
         right: 17%;
-        top: 132%;
-        background-image: url("../../assets/#{$img}");
+        top: 153%;
+        background-image: url('../../assets/#{$img}');
     }
 }

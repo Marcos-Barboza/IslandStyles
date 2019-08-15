@@ -73,10 +73,10 @@ const Intro: React.FunctionComponent = () => {
         if (trocaPosition) {
             const intervalo = setInterval(() => {
                 window.scrollTo({
-                    top: 115 + window.scrollY,
+                    top: 110 + window.scrollY,
                     behavior: 'smooth',
                 })
-            }, 115)
+            }, 110)
             // window.scrollTo({
             //     top: 905,
             //     behavior: 'smooth',
@@ -89,14 +89,14 @@ const Intro: React.FunctionComponent = () => {
     }, [trocaPosition])
 
     const eventListener = () => {
-       const scroll = window.scrollY
-       console.log(scroll)
+        const scroll = window.scrollY
+        console.log(scroll)
         if (scroll > 0 && scroll < 10) {
             setTrocaPosition(true)
         }
     }
 
-    const trocaPositionScrollY = (window: Window) => {  
+    const trocaPositionScrollY = (window: Window) => {
         return window.addEventListener('scroll', eventListener, false)
     }
 
@@ -125,7 +125,9 @@ const Intro: React.FunctionComponent = () => {
             </p>
             <div style={{ display: 'flex' }}>
               <div className="subscribeButton">SUBSCRIBE</div>
-              <div className="downloadButton">DOWNLOAD FREE TRIAL</div>
+              <div className="downloadButton">
+                            DOWNLOAD FREE TRIAL
+              </div>
             </div>
             <div style={{ marginTop: '10px' }} className="subTitle">
                         Talk to a sales representative: 1-833-843-3437
@@ -133,7 +135,7 @@ const Intro: React.FunctionComponent = () => {
             <div className="subTitle">Have Autodesk contact you</div>
           </div>
           <div>
-            {trocaStyle.map((v) => (
+            {trocaStyle.map(v => (
               <div
                 key={v.i}
                 className={trocaPosition ? v.after : v.before}
