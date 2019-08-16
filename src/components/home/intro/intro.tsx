@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Fusion from 'src/assets/fusion.png'
 
 const Intro: React.FunctionComponent = () => {
+    const scrollG = document.querySelector('html') as HTMLHtmlElement
     const [trocaPosition, setTrocaPosition] = useState(false)
     const [begin, setBegin] = useState(false)
+
     interface TrocaStyle {
         i: number
         title: string
@@ -71,29 +73,42 @@ const Intro: React.FunctionComponent = () => {
         },
     ]
 
-    const handleWindowElement = () => {
-        if (window.scrollY > 0 && window.scrollY < 100) {
+    /** Desabilita e habilita o scroll */
+    useEffect(() => {
+        if (scrollG.style.overflow === 'auto') scrollG.style.overflow = 'hidden'
+        setTimeout(() => {
+            scrollG.style.overflow = 'auto'
+        }, 1000)
+    }, [trocaPosition])
+
+    /** Aplica os estilos e move o scroll */
+    const handleMoveWindowScroll = () => {
+        if (window.scrollY > 0 && window.scrollY < 50) {
             setTrocaPosition(true)
             window.scrollTo({ top: 850 })
-            window.removeEventListener('scroll', handleWindowElement, false)
+            window.removeEventListener('scroll', handleMoveWindowScroll)
         } else if (window.scrollY < 850) {
             setTrocaPosition(false)
             window.scrollTo({ top: -850 })
-            window.removeEventListener('scroll', handleWindowElement, false)
+            window.removeEventListener('scroll', handleMoveWindowScroll)
         }
     }
 
-    const handleMoveWindowElement = () => {
+    /** Aciona handleMoveWindowScroll conforme as condições */
+    const handleWindowScroll = () => {
         if (window.scrollY === 0 || window.scrollY === 850) {
-            window.addEventListener('scroll', handleWindowElement, false)
+            window.addEventListener('scroll', handleMoveWindowScroll)
         } else if (!begin) {
             setBegin(true)
-            window.addEventListener('scroll', handleWindowElement, false)
-            window.removeEventListener('scroll', handleMoveWindowElement, false)
+            window.addEventListener('scroll', handleMoveWindowScroll)
+            window.removeEventListener('scroll', handleWindowScroll)
+        } else if (window.scrollY > 850) {
+            setTrocaPosition(true)
         }
     }
 
-    window.addEventListener('scroll', handleMoveWindowElement, false)
+    /** Evento responsável por ouvir constantemente o scroll */
+    window.addEventListener('scroll', handleWindowScroll, false)
 
     return (
         <div className="introContainer">

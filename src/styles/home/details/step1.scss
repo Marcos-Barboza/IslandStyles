@@ -1,0 +1,53 @@
+@import '../../defaultStructs.scss';
+
+$backgroundSize: contain !important;
+
+.motorcycle {
+    @extend %img;
+    width: 100%;
+    height: 500px;
+    background-image: url(../../assets/moto.png);
+    background-size: $backgroundSize;
+}
+
+.computer {
+    @extend %img;
+    background-image: url(../../assets/pc.png);
+    background-size: $backgroundSize;
+}
+
+$detailsImgs: (
+    ('modeling', 'roda.png'),
+    ('design', 'design.png'),
+    ('collaboration' 'collaboration.png')
+);
+
+@each $name, $img in $detailsImgs {
+    .#{$name}Before {
+        @extend %img;
+        z-index: 20;
+        transition: 1s;
+        opacity: 0;
+        position: absolute;
+        width: 500px;
+        height: 300px;
+        right: 170px;
+        top: -300px;
+        background-image: url('../../assets/#{$img}');
+    }
+}
+
+@each $name, $img in $detailsImgs {
+    .#{$name}After {
+        @extend %img;
+        z-index: 20;
+        transition: 1s;
+        opacity: 1;
+        position: absolute;
+        width: 560px;
+        height: 300px;
+        right: 191px;
+        top: 166px;
+        background-image: url('../../assets/#{$img}');
+    }
+}

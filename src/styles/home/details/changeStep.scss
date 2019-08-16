@@ -1,0 +1,35 @@
+@import '../../defaultStructs.scss';
+
+.detailsContainer {
+    @extend %xCenter;
+    top: 10px;
+    height: 100vh;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.details {
+    margin-top: 5%;
+    display: flex;
+    width: 72%;
+}
+
+.detailsRight {
+    width: 57%;
+}
+
+.detailsLeft {
+    margin-top: 10%;
+    margin-right: 8%;
+    width: 35%;
+}
+
+.titleDetails {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: black;
+}
+
+.subTitleDetails {
+    color: rgb(124, 124, 124);
+}

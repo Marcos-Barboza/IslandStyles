@@ -70,6 +70,7 @@ $imgContainer: (
 @each $name, $top, $right in $imgContainer {
     .imgContainer#{$name} {
         transition: 1s;
+        z-index: 10;
         border: $bordaDefault;
         top: $top;
         right: $right;
@@ -111,6 +112,7 @@ $afterImgContainer: (
 
 @each $name, $top, $right in $afterImgContainer {
     .imgContainer#{$name}After {
+        z-index: 10;
         border: $bordaDefault;
         top: $top;
         right: $right;
